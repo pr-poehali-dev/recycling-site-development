@@ -3,7 +3,7 @@ import { LanguageToggle } from "@/components/LanguageToggle";
 import { RecyclingCategory } from "@/components/RecyclingCategory";
 import { LocationAccordion } from "@/components/LocationAccordion";
 import { getRecyclingPointsByMaterial } from "@/data/recyclingPoints";
-import { Bottle, FileText, Shirt, ShoppingBag, Wine } from "lucide-react";
+import { FileText, Shirt, ShoppingBag, Wine, Trash2, Recycle } from "lucide-react";
 
 const Index = () => {
   const [language, setLanguage] = useState<"ru" | "en">("ru");
@@ -69,7 +69,7 @@ const Index = () => {
           
           <div className="flex flex-wrap justify-center gap-12 mb-16">
             <RecyclingCategory 
-              icon={<Bottle className="h-12 w-12 text-primary" />} 
+              icon={<Recycle className="h-12 w-12 text-primary" />} 
               title={t.plastic}
               language={language}
               type="plastic"
@@ -142,7 +142,7 @@ const Index = () => {
             />
             <LocationAccordion 
               title={t.waste}
-              icon={<ShoppingBag className="h-6 w-6 text-primary" />}
+              icon={<Trash2 className="h-6 w-6 text-primary" />}
               locations={getRecyclingPointsByMaterial("plastic").concat(getRecyclingPointsByMaterial("paper"))}
               language={language}
             />
