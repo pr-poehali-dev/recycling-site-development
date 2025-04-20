@@ -1,42 +1,85 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+ 
 @layer base {
   :root {
-    --background: 120 70% 95%;
-    --foreground: 145 80% 10%;
-
-    --card: 120 70% 92%;
-    --card-foreground: 145 80% 10%;
-
-    --popover: 120 70% 95%;
-    --popover-foreground: 145 80% 10%;
-
-    --primary: 140 60% 20%;
-    --primary-foreground: 120 70% 95%;
-
-    --secondary: 140 40% 65%;
-    --secondary-foreground: 140 60% 20%;
-
-    --muted: 140 40% 85%;
-    --muted-foreground: 140 50% 25%;
-
-    --accent: 140 40% 85%;
-    --accent-foreground: 140 60% 20%;
-
+    --background: 150 15% 90%;
+    --foreground: 146 45% 24%;
+    
+    --card: 150 15% 90%;
+    --card-foreground: 146 45% 24%;
+ 
+    --popover: 150 15% 90%;
+    --popover-foreground: 146 45% 24%;
+ 
+    --primary: 146 45% 24%;
+    --primary-foreground: 150 15% 90%;
+ 
+    --secondary: 140 36% 56%;
+    --secondary-foreground: 150 15% 90%;
+ 
+    --muted: 150 15% 90%;
+    --muted-foreground: 146 45% 24%;
+ 
+    --accent: 140 36% 56%;
+    --accent-foreground: 146 45% 24%;
+ 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 120 70% 95%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 145 30% 80%;
-    --input: 145 30% 80%;
-    --ring: 140 60% 20%;
-
-    --radius: 0.5rem;
+    --border: 146 45% 24%;
+    --input: 146 45% 24%;
+    --ring: 140 36% 56%;
+ 
+    --radius: 1rem;
   }
-
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+ 
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+ 
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
   body {
-    @apply bg-primary border-4 border-primary;
-    min-height: 100vh;
+    @apply bg-green-900 text-foreground;
   }
+}
+
+/* Стили для зеленого экологического дизайна */
+.bg-eco-gradient {
+  background: linear-gradient(135deg, #E3F2E0 0%, #7FB069 100%);
+}
+
+body {
+  background-color: #0B6E4F;
 }

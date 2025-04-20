@@ -16,7 +16,7 @@ export const LanguageToggle = ({ language, onChange }: LanguageToggleProps) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="flex items-center gap-1 text-lg font-medium">
+        <Button variant="ghost" className="flex items-center gap-1 text-lg font-medium text-right">
           {language === "en" ? "English" : "Русский"}
           <ChevronDown className="h-4 w-4" />
         </Button>
