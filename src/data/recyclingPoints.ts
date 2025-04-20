@@ -1,31 +1,60 @@
+export type RecyclingPointType = {
+  nameRu: string;
+  nameEn: string;
+  addressRu: string;
+  addressEn: string;
+  image: string;
+  materials: ("plastic" | "paper" | "metal" | "glass" | "clothes")[];
+  coordinates?: {
+    lat: number;
+    lng: number;
+  };
+  minutes?: number;
+};
 
-// Временный пример данных, будет заменен на реальные адреса
-export const recyclingPoints = [
+// Заглушка для данных, которые будут добавлены позже
+export const recyclingPoints: RecyclingPointType[] = [
   {
-    nameRu: "Пункт приема №1",
-    nameEn: "Recycling Point #1",
-    addressRu: "ул. Примерная, д. 1",
-    addressEn: "1 Example Street",
+    nameRu: "ЭкоПункт на Баумана",
+    nameEn: "EcoPoint on Bauman",
+    addressRu: "ул. Баумана, 25, Казань",
+    addressEn: "25 Bauman St., Kazan",
     image: "/placeholder.svg",
-    materials: ["plastic", "paper"],
-    coordinates: { lat: 55.7558, lng: 37.6173 } // Москва
+    materials: ["plastic", "paper", "metal"],
+    coordinates: {
+      lat: 55.786398,
+      lng: 49.122103
+    },
+    minutes: 9
   },
   {
-    nameRu: "Пункт приема №2",
-    nameEn: "Recycling Point #2",
-    addressRu: "ул. Тестовая, д. 5",
-    addressEn: "5 Test Street",
+    nameRu: "Центр приема вторсырья",
+    nameEn: "Recycling Center",
+    addressRu: "ул. Пушкина, 17, Казань",
+    addressEn: "17 Pushkin St., Kazan",
     image: "/placeholder.svg",
-    materials: ["metal", "clothes"],
-    coordinates: { lat: 55.7539, lng: 37.6208 }
+    materials: ["plastic", "paper", "clothes"],
+    coordinates: {
+      lat: 55.791377,
+      lng: 49.114419
+    },
+    minutes: 15
   },
   {
-    nameRu: "Экоцентр",
-    nameEn: "Eco Center",
-    addressRu: "пр. Зеленый, д. 10",
-    addressEn: "10 Green Avenue",
+    nameRu: "Зеленая точка",
+    nameEn: "Green Point",
+    addressRu: "пр. Ямашева, 45, Казань",
+    addressEn: "45 Yamashev Ave., Kazan",
     image: "/placeholder.svg",
-    materials: ["plastic", "paper", "metal", "clothes"],
-    coordinates: { lat: 55.7522, lng: 37.6156 }
+    materials: ["plastic", "metal", "glass"],
+    coordinates: {
+      lat: 55.826369,
+      lng: 49.132429
+    }
   }
 ];
+
+// Функция для получения пунктов переработки по типу материала
+export const getRecyclingPointsByMaterial = (material: string) => {
+  return recyclingPoints.filter(point => point.materials.includes(material as any));
+};
